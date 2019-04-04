@@ -11,6 +11,9 @@ $git status
 --put cache content into repository
 $git commit -m "first commit"
 
+--use -a option to skip the 'add into cache' step 
+$git commit -am "first commit"
+
 --cancel all the cache content
 $git reset
 
