@@ -1,0 +1,9 @@
+1.support export and download .csv file with js (only for text)
+https://halistechnology.com/2015/05/28/use-javascript-to-export-your-data-as-csv/
+
+	link = document.createElement('a');
+        link.setAttribute('href', data);
+        link.setAttribute('download', filename);
+        link.click();
+2.python XlsxWriter mudule
+https://xlsxwriter.readthedocs.io/

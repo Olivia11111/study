@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>tabs</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="../CSS/lib/bootstrap.css">
+    <!--make sure jquery is included before bootstrap-->
+  <script src="../Scripts/lib/jquery.js"></script>
+  <script src="../Scripts/lib/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    //计算日期相差的天数
+    function datediff(startdate,enddate)
+    {
+      //alert(typeof(startdate));
+      //拆分字符串
+      var d1 = startdate.split('-');
+      var d2 = enddate.split('-');
+      //重新定义2个日期
+      var date1 = new Date(d1[0],d1[1],d1[2]);
+      var date2 = new Date(d2[0],d2[1],d2[2]);
+      //取得子1970-01-01到指定日期的毫秒数
+      var dt1 = date1.getTime();
+      var dt2 = date2.getTime();
+      console.log(d1[0],d1[1],d1[2]);
+      console.log(d2[0],d2[1],d2[2]);
+      console.log(dt1,dt2,(dt2-dt1) / (24*60*60*1000));
+      return (dt2-dt1) / (24*60*60*1000)
+    }
+    //响应查询按钮
+    function query()
+    {
+      //先把输出内容情况
+      var yy = document.getElementById("sp");
+      yy.innerHTML = "";
+      var date1 = document.getElementById("date1").value;
+      var date2 = document.getElementById("date2").value;
+      //判断开始日期是否大于结束日期
+      if (date1 > date2)
+      {
+        alert("开始日期大于结束日期！请重新选择查询日期");
+        return false;
+      }
+      //判断是否为最近40天的数据
+      var today = dateToString(new Date());
+      if (datediff(date1,today)<0 || datediff(date1,today)> 41 || datediff(date2,today)< 0 || datediff(date2,today)> 41)
+      {
+        alert("只能查询最近40天范围的数据！请重新选择查询日期");
+        return false;
+      }
+      //把选择的日期输出
+      var xx = document.getElementsByName("day");
+      var s="";
+      for (var i=0;i<xx.length ;i++ )
+      {
+        if(xx[i].tagName == 'TD')
+          s= s + xx[i].innerText;
+          //alert(xx[i].innerText);
+        else
+        {
+          if(xx[i].tagName == 'INPUT')
+            s += xx[i].value;
+        }
+        if( i % 2 == 1)
+          s+=";";
+      }
+      yy.innerHTML = s;
+    }
+    //实现把日期类型数据转化为标准的字符串格式
+    function dateToString(d)
+    {
+      var y= d.getFullYear();
+      var m= d.getMonth() + 1;
+      var d=d.getDate();
+      //把日期2017-1-6 格式化为标准的 2017-01-06
+      //判断数字的长度是否是1，如果是1那么前面加上字符0
+      if(m.toString().length == 1) m= "0" + m;
+      if(d.toString().length == 1) d= "0" + d;
+      return y+"-"+m+"-"+d;
+    }
+    //在页面加载的时候，初始化开始(40天前的日期)、结束日期(当天)，实现默认查询最近40天的数据
+    function onload()
+    {
+      //获取今天的日期，但是这个数据的格式不标准
+      //也就是把 Fri Jan 06 2017 10:43:07 GMT+0800 转化成 2017-01-06 这种格式
+      var d = new Date();
+      var endDate = dateToString(d);
+      //返回日期的原始值，也就是自xxx年xx月xx日 到今天的日期相差的毫秒数
+      d = d.valueOf();
+      d = d - 40*24*60*60*1000;
+      d = new Date(d);
+      var startDate = dateToString(d);
+      //把日期值输出到chrome的日志中，方便调试
+      console.log(d);
+      console.log(startDate);
+      console.log(endDate);
+      var date1 = document.getElementById("date1");
+      var date2 = document.getElementById("date2");
+      date1.value = startDate;
+      date2.value = endDate;
+    }
+  </script>
+	</head>
+   
+  <body onload="onload()">
+  <table>
+    <tr>
+      <td name="day">开始日期: <input type="date" name="day" id="date1" /></td>
+    </tr>
+    <tr>
+      <td name="day">结束日期：<input type="date" name="day" id="date2"/></td>
+      <td><input type="button" value="查 询" onclick="query()" /></td>
+    </tr>
+  </table>
+  <hr>
+  <p><span id="sp"></span><p>
+<br>
+<input type="datetime-local" value="2015-09-24T13:59:59"/>
+<input type="time" value="13:59"/>
+<input type="time" value="13:59:59"/> 
+</body>

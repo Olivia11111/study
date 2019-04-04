@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Full Screen</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="../CSS/lib/bootstrap.css">
+	<link rel="stylesheet" href="../CSS/style.css">
+	</head>
+<body>
+	<!--make sure jquery is included before bootstrap-->
+	<script src="../Scripts/lib/jquery.js"></script>
+	<!--<script src="../Scripts/lib/bootstrap.min.js"></script>-->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
+	<div>
+		<video controls id="myvideo" width="320" height="240" controls>
+		  <source src="../source/small.mp4"></source>
+		  video
+		</video>
+		<button  type="button" onclick="fullScreen()">Full Screen</button >
+	</div>
+		
+	<script>
+	function fullScreen(){	
+		var element = document.getElementById("myvideo");
+		if(element.requestFullscreen) {
+			element.requestFullscreen();
+		  } else if(element.mozRequestFullScreen) {
+			element.mozRequestFullScreen();
+		  } else if(element.webkitRequestFullscreen) {
+			element.webkitRequestFullscreen();
+		  } else if(element.msRequestFullscreen) {
+			element.msRequestFullscreen();
+		  }
+	}
+	$("#myvideo").on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e)
+	{
+		//do something;
+		console.log("on change");
+		var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
+		if (fullscreenElement)
+			console.log("fullscreen");
+	});
+	</script>
+</body>

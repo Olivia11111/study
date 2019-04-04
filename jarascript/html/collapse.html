@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>collapse</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="../CSS/lib/bootstrap.css">
+	<!--<link rel="stylesheet" href="../CSS/style.css">-->
+</head>
+<body>
+	<!--make sure jquery is included before bootstrap-->
+	<script src="../Scripts/lib/jquery.js"></script>
+	<!--<script src="../Scripts/lib/bootstrap.min.js"></script>-->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+	<div>
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" href="#collapse1" >
+					<h4 class="panel-title">
+						<!--<span class="ispicon ispicon_accordian_droparrowOpen pull-left"></span>
+						<span data-toggle="collapse" data-target="#collapse1" href="#collapse1">2 Doors</span>-->
+						title
+					</h4>
+				</div>
+				<div id="collapse1" class="panel-collapse collapse ">
+					<div class="panel-body">
+						body
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2" href="#collapse2" >
+					<h4 class="panel-title">
+						<!--<span class="ispicon ispicon_accordian_droparrowOpen pull-left"></span>
+						<span data-toggle="collapse" data-target="#collapse1" href="#collapse1">2 Doors</span>-->
+						title
+					</h4>
+				</div>
+				<div id="collapse2" class=" panel-collapse collapse fade">
+					<div class="panel-body">
+						body
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>

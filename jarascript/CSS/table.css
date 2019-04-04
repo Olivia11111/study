@@ -1,0 +1,7 @@
+.table {
+	width:300px;
+}
+
+.table .name {
+	max-width:100px;
+}

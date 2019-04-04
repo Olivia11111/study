@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>input forbit characters</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="../CSS/lib/bootstrap.css">
+	<link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+	<!--make sure jquery is included before bootstrap-->
+	<script src="../Scripts/lib/jquery.js"></script>
+	<!--<script src="../Scripts/lib/bootstrap.min.js"></script>-->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../Scripts/lib/knockout-3.4.0.js"></script>
+	
+	<div style="position:absolute; top:0;left:0;right:0;bottom:0;" >
+		<input type="text" id="text1" onkeyup="this.value=this.value.replace(/[\\\|\{\}\"\<\>\(\);\[\],^\~\`]/,'')"/>
+	</div>
+	
+	<script>
+	document.getElementById("text1").onkeypress = function(e){
+		//checkChar(e);
+	}
+	function checkChar(e){
+		e = window.event || e;
+		var code = e.keyCode || e.which;
+		var reg = /[\\\|\{\}"\<\>\(\);\[\],^\~\`]/;// 禁止 \|{}"<>|();[],^~`
+		if(reg.test(String.fromCharCode(code))){
+			if(window.event){
+				e.returnValue = false;
+			}else{
+				e.preventDefault();
+			}
+		}
+	}
+	</script>	
+	
+</body>

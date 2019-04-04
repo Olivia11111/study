@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>border</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="../CSS/lib/bootstrap.css">
+	<style>
+		.triangle{
+			position:relative;
+			display:inline-block;
+			left:100px;
+			top:100px;
+		}
+		.triangle::after{		
+			content: "";
+			position: absolute;
+			bottom: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: black transparent transparent transparent;
+		}
+	</style>
+</head>
+<body>
+	<!--make sure jquery is included before bootstrap-->
+	<script src="../Scripts/lib/jquery.js"></script>
+	<!--<script src="../Scripts/lib/bootstrap.min.js"></script>-->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <div class="triangle">triangle</div>
+</body>

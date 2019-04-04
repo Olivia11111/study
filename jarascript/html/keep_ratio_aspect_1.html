@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title> 1-flexible elements with fixed aspect ratio</title>
+	<style>
+		html {
+			width: 100%;
+			height: 100%;
+		}
+		
+		body {
+			width: 36%;
+			margin: 20px auto;
+		}		
+
+		div.stretchy-wrapper {
+			background:#51AF56;		
+			position: relative;			
+			width:100%;
+			padding-bottom:100%;
+		}
+
+		div.stretchy-wrapper > div { 
+			text-align:center;
+			color:white;
+			font-size:20px;
+			position: absolute; 
+			top: 0; 
+			bottom: 0; 
+			left: 0; 
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="stretchy-wrapper">
+		<div>1:1 aspect ratio</div>
+	</div>	
+</body>
+</html>
+	

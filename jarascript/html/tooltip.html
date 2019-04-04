@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>border</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="../CSS/lib/bootstrap.css">
+	<style>
+		.red-tooltip + .tooltip > .tooltip-inner {
+		  background-color: #f00;
+		  border: 1px solid blue;
+		  }
+		.tooltip.bottom .tooltip-arrow {
+		  top: 0;
+		  left: 50%;
+		  margin-left: -5px;
+		  border-bottom: 5px solid blue; 
+		  margin-top:0px;
+		  position:absolute;
+		}
+
+		.tooltip.bottom .tooltip-arrow:after {
+		  content: "";  
+		  position:absolute;
+		  display:inline-block;
+		  top: 0;
+		  left: 0;
+		  width:0px;
+		  height:0px;
+		  border-left: 5px solid transparent;
+		  border-right: 5px solid transparent;
+		  border-bottom: 5px solid red; 
+		  margin-left:-5px;
+		  margin-top:2px;
+		}
+	</style>
+</head>
+<body>
+	<!--make sure jquery is included before bootstrap-->
+	<script src="../Scripts/lib/jquery.js"></script>
+	<!--<script src="../Scripts/lib/bootstrap.min.js"></script>-->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <a href="#" data-toggle="tooltip" data-placement="bottom"
+       title="" data-original-title="Tooltip on bottom"
+       class="red-tooltip">Tooltip on bottom</a>
+	   
+	   <script type="text/javascript">
+	   $(document).ready(function(){
+			$("a").tooltip();
+		});
+		</script>
+</body>

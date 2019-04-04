@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+  <link href="video.js/dist/video-js.css" rel="stylesheet">
+  
+</head>
+
+<body>
+  <video id='my-player' class='video-js' controls autoplay preload='auto' width='640' height='264'
+   data-setup='{}'>
+    <source src='video-sample/white_bear.mp4' type='video/mp4'>
+  </video>
+  <div>
+    <input type="button" value="To 50s" onclick="goTo50s()" >
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  
+  <script src='video.js/dist/video.js'></script>
+  <script src='my_player.js'></script>
+</body>
+<html>

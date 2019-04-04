@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    <title>tabs</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="../../CSS/lib/bootstrap.css">
+    <!--make sure jquery is included before bootstrap-->
+  <script src="../../Scripts/lib/jquery.js"></script>
+  <script src="../../Scripts/lib/bootstrap.min.js"></script>
+  <script src="../../Scripts/lib/angular.min.js"></script>
+</head>
+<body>
+   <div>
+    <div class="container" ng-controller="MyController">
+      <div class="my-info">
+         我的名字是：{{name}}<span ng-bind="name"></span><br/>
+         我的年龄是：<span ng-bind="age"></span><br />
+      </div>
+      <div class="my-directive" my-directive my_name="{{myName}}" age="age" change-my-age="changeAge()"></div>
+    </div>
+  </div> 
+  <script src="./main.js"></script>
+</body>
+</html>
