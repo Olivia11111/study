@@ -1,0 +1,49 @@
+{
+  "_args": [
+    [
+      "github:requirejs/i18n",
+      "C:\\Olivia\\projects\\Secure Console\\glass\\Glass\\Production\\Glass\\WebApp"
+    ]
+  ],
+  "_from": "github:requirejs/i18n",
+  "_id": "i18n@github:requirejs/i18n#6ef197793a713a21f2e74f98e372c161aad3490f",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/i18n",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "github:requirejs/i18n",
+    "rawSpec": "github:requirejs/i18n",
+    "saveSpec": "github:requirejs/i18n",
+    "fetchSpec": null,
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "/",
+    "/@hw/workflow"
+  ],
+  "_resolved": "github:requirejs/i18n#6ef197793a713a21f2e74f98e372c161aad3490f",
+  "_spec": "github:requirejs/i18n",
+  "_where": "C:\\Olivia\\projects\\Secure Console\\glass\\Glass\\Production\\Glass\\WebApp",
+  "author": {
+    "name": "jrburke",
+    "email": "jrburke@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/requirejs/i18n/issues"
+  },
+  "description": "An AMD loader plugin for loading internationalization/localization string resources.",
+  "homepage": "https://github.com/requirejs/i18n",
+  "license": "MIT",
+  "main": "i18n.js",
+  "name": "i18n",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/requirejs/i18n.git"
+  },
+  "version": "2.0.6",
+  "volo": {
+    "url": "https://raw.githubusercontent.com/requirejs/i18n/{version}/i18n.js"
+  }
+}
