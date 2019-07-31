@@ -1,8 +1,0 @@
-
-js/app.js
-----------------
-C:/Olivia/study/trys/jarascript/i18n/lib/jquery/dist/jquery.min.js
-C:/Olivia/study/trys/jarascript/i18n/lib/i18n/i18n.js
-js/nls/messages.js
-i18n!nls/messages
-js/app.js
