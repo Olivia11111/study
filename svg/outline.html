@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		svg path {
+    	stroke-opacity: 0.5;
+    	stroke: red;
+    	stroke-width: 4px;
+        filter: url(#f2);
+    </style>
+</head>
+<body>
+
+<svg>
+	<defs>
+    <filter id="f1">
+        <feMorphology result="dilateOut" operator="dilate" radius="5"/>
+        <feBlend in="SourceGraphic" in2="dilateOut" mode="normal" />
+     
+    </filter>
+    <filter id="f2">
+    <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="4"></feMorphology>
+        
+        <feFlood flood-color="pink" flood-opacity="1" result="PINK"></feFlood>
+        <feComposite in="PINK" in2="DILATED" operator="in" result="OUTLINE"></feComposite>
+
+        <feMerge>
+            <feMergeNode in="OUTLINE" />
+            <feMergeNode in="SourceGraphic" />
+        </feMerge>
+    </filter>
+  </defs>
+ <path d=" M 50,50,100 140,160 120 z" fill-rule="evenodd" fill="transparent" fill-opacity="1" stroke="grey" stroke-opacity="1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1,4"></path>
+</svg>
+
+</body>
+</html>
