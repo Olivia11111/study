@@ -26,6 +26,6 @@
     "gulp-uglify-es": "^1.0.1",
     "gulp-util": "^3.0.8",
     "js-string-escape": "^1.0.1",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.4.0"
   }
 }
